@@ -6,23 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Identifier</title>
 </head>
+
 <body>
-    <h1>Você é Brasileiro</h1>
-    <p>Qual é o seu país de origem?</p>
-    <input type="text" name="País" id="País">
-    <input type="button" value="Ok" onclick="indentificar()">
+    <h1>Você é Brasileiro(a)?</h1>
+    <p>Digite o país em que voce nascel </p>
+
+    <!--caixa de texto perguntando o pais que nascel-->
+    <input type="text" name="pais" id="pais">
+    <!--botao para dar o resultado se é brasileiro ou estrangeiro-->
+    <button onclick="analizar()">ok</button>
+    <!--mostrar o resultado-->
     <div id="resultado"></div>
-    
-    <script>
-        function indentificar() {
-            var pais = document.getElementById('País')
-            var res = document.getElementById('resultado')
-            if (pais == 'brasil') {
-                res.innerHTML += `Você é <strong>Brasileiro</strong> do país Brasil`
-            } else {res.innerHTML += `Você é <strong>Estrangeiro</strong>`
-                
+
+   <script>
+        // analizar se é barsileiro ou não
+       function analizar() {
+            // variavel do pais
+            var pais = document.getElementById('pais')
+            var resultado = document.getElementById('resultado')
+            pais.innerText = `Vivendo em pais ${pais}`
+            if (pais == 'Brasil') {
+                resultado.innerText += 'Você é Brasileiro'
+            } else {
+                resultado.innerText += 'Você é Estrangeiro'
             }
-        }
-    </script>
+       }
+   </script>
 </body>
 </html>
